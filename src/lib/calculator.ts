@@ -60,7 +60,7 @@ export function evaluateTokens(tokens: Token[]): number {
       if (Number.isNaN(n)) throw new CalcError("Invalid number");
       output.push(n);
     } else {
-      while (ops.length > 0 && PRECEDENCE[ops[ops.length - 1]] >= PRECEDENCE[token.value]) {
+      while (ops.length > 0 && PRECEDENCE[ops[ops.length - 1]!]! >= PRECEDENCE[token.value]!) {
         const op = ops.pop()!;
         const b = output.pop()!;
         const a = output.pop()!;
