@@ -10,11 +10,14 @@ const THEME_KEY = "my-calculator-theme";
 /** Full calculator: header, display, keypad, and session history. */
 export function CalculatorApp() {
   const calc = useCalculator();
-  const [dark, setDark] = useState(() => {
-    if (typeof window === "undefined") return true;
+  // Always start dark so SSR and the first client render match; the saved /
+  // system preference is applied right after mount (see effect below).
+  const [dark, setDark] = useState(true);
+
+  useEffect(() => {
     const saved = localStorage.getItem(THEME_KEY);
-    return saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+    setDark(saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
