@@ -47,7 +47,7 @@ function applyOp(a: number, b: number, op: Operator): number {
 export function evaluateTokens(tokens: Token[]): number {
   // Drop a trailing operator so "5 +" still evaluates to 5.
   const cleaned = [...tokens];
-  while (cleaned.length > 0 && cleaned[cleaned.length - 1].type === "op") cleaned.pop();
+  while (cleaned.length > 0 && cleaned[cleaned.length - 1]!.type === "op") cleaned.pop();
   if (cleaned.length === 0) throw new CalcError("Nothing to calculate");
 
   // Shunting-yard: build RPN output + operator stacks.
