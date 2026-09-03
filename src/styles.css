@@ -142,6 +142,15 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  /* Calculator-specific tokens */
+  --key: oklch(0.27 0.03 262);
+  --key-foreground: oklch(0.95 0.01 250);
+  --key-hover: oklch(0.33 0.035 262);
+  --key-shadow: oklch(0.2 0.025 262);
+  --display: oklch(0.16 0.03 262);
+  --display-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.65 0.17 245);
+  --background: oklch(0.14 0.025 262);
 }
 
 @layer base {
