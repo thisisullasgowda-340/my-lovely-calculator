@@ -59,17 +59,22 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-key: var(--key);
+  --color-key-foreground: var(--key-foreground);
+  --color-key-hover: var(--key-hover);
+  --color-display: var(--display);
+  --color-display-foreground: var(--display-foreground);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.985 0.004 250);
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.55 0.18 250);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -95,16 +100,23 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  /* Calculator-specific tokens */
+  --key: oklch(0.955 0.006 255);
+  --key-foreground: oklch(0.21 0.04 265);
+  --key-hover: oklch(0.925 0.01 255);
+  --key-shadow: oklch(0.87 0.012 255);
+  --display: oklch(0.962 0.008 250);
+  --display-foreground: oklch(0.18 0.04 265);
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
+  --background: oklch(0.14 0.025 262);
   --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
+  --card: oklch(0.2 0.035 262);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
+  --primary: oklch(0.65 0.17 245);
   --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
@@ -130,6 +142,13 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  /* Calculator-specific tokens */
+  --key: oklch(0.27 0.03 262);
+  --key-foreground: oklch(0.95 0.01 250);
+  --key-hover: oklch(0.33 0.035 262);
+  --key-shadow: oklch(0.2 0.025 262);
+  --display: oklch(0.16 0.03 262);
+  --display-foreground: oklch(0.96 0.01 250);
 }
 
 @layer base {
