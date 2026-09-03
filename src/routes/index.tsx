@@ -1,24 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CalculatorApp } from "@/components/calculator/calculator-app";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "My Calculator — Fast, Free Online Calculator" },
+      {
+        name: "description",
+        content:
+          "A modern, free online calculator with order of operations, percentages, keyboard support, and a session calculation history. Works on desktop, tablet, and mobile.",
+      },
+      { property: "og:title", content: "My Calculator — Fast, Free Online Calculator" },
+      {
+        property: "og:description",
+        content:
+          "A modern, free online calculator with order of operations, keyboard support, and calculation history.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
+  component: CalculatorApp,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
